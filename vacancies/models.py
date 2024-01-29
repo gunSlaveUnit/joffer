@@ -1,7 +1,9 @@
 from django.db import models
 
+from root.models import Entity
 
-class Vacancy(models.Model):
+
+class Vacancy(Entity):
     title = models.CharField(max_length=100)
 
     class Meta:
