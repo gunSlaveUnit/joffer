@@ -6,6 +6,22 @@
             <a href="{% url 'vacancy_detail' vacancy.pk %}">
                 <h1>{{ vacancy.title }}</h1>
             </a>
+
+            {% if vacancy.salary_from %}
+                from {{ vacancy.salary_from }}
+
+                {% if vacancy.salary_to %}
+                    to {{ vacancy.salary_to }} &#8381;
+                {% else %}
+                    &#8381;
+                {% endif %}
+            {% else %}
+                {% if vacancy.salary_to %}
+                    to {{ vacancy.salary_to }} &#8381;
+                {% else %}
+                     {{ "by agreement" }}
+                {% endif %}
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}
