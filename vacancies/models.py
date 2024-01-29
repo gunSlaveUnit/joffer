@@ -8,3 +8,6 @@ class Vacancy(Entity):
 
     class Meta:
         verbose_name_plural = 'vacancies'
+
+    def __str__(self):
+        return self.title
