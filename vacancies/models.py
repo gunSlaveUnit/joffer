@@ -9,6 +9,7 @@ class Vacancy(Entity):
     salary_to = models.IntegerField(null=True, blank=True)
     salary_from = models.IntegerField(null=True, blank=True)
 
+    experience_matter = models.BooleanField(default=False)
     experience_to = models.IntegerField(null=True, blank=True)
     experience_from = models.IntegerField(null=True, blank=True)
 
