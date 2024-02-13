@@ -18,3 +18,10 @@ class Vacancy(Entity):
 
     def __str__(self):
         return self.title
+
+
+class Hiding(Entity):
+    """The user can hide a vacancy from the search results."""
+
+    vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
