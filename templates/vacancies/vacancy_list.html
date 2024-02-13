@@ -22,6 +22,26 @@
                      {{ "by agreement" }}
                 {% endif %}
             {% endif %}
+
+            {% if vacancy.experience_matter %}
+                {% if vacancy.experience_from %}
+                    from {{ vacancy.experience_from }}
+
+                    {% if vacancy.experience_to %}
+                        to {{ vacancy.experience_to }} years
+                    {% else %}
+                        years
+                    {% endif %}
+                {% else %}
+                    {% if vacancy.experience_to %}
+                        up to {{ vacancy.experience_to }} years
+                    {% else %}
+                        {{ "without experience" }}
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                not matter
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}
