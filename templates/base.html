@@ -8,6 +8,12 @@
     <header>
         <nav>
             <a href="{% url 'vacancy_list' %}">Vacancies</a>
+
+            {% if user.is_authenticated %}
+                {{ user.username }}
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
         </nav>
     </header>
 
