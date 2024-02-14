@@ -35,6 +35,13 @@ class Vacancy(Entity):
         return self.title
 
 
+class Favorite(Entity):
+    """The user can add a vacancy to the favorites."""
+
+    vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+
+
 class Hiding(Entity):
     """The user can hide a vacancy from the search results."""
 
