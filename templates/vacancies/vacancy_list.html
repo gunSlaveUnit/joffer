@@ -42,6 +42,10 @@
             {% else %}
                 not matter
             {% endif %}
+
+            {% for skill in vacancy.skills.all %}
+                {{ skill.title }}
+            {% endfor %}
         </div>
     {% endfor %}
 {% endblock %}
