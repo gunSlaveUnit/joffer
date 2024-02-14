@@ -19,6 +19,8 @@ class Skill(Entity):
 class Vacancy(Entity):
     title = models.CharField(max_length=100)
 
+    skills = models.ManyToManyField(Skill)
+
     salary_to = models.IntegerField(null=True, blank=True)
     salary_from = models.IntegerField(null=True, blank=True)
 
