@@ -5,9 +5,9 @@ from root.models import Entity
 
 class Skill(Entity):
     """
-    Represents an ability or expertise
-    that a candidate should have or be able
-    to work with or have in their personality trait.
+    Represents ability or experience
+    that the candidate should have (or already has)
+    or be able to work with or have a personality trait.
     """
 
     title = models.CharField(max_length=100)
