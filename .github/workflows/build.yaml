@@ -1,11 +1,11 @@
-name: Testing GitHub Actions
+name: Build
 
 on:
     push:
         branches: [master]
 
 jobs:
-    build:
+    Build:
         runs-on: ubuntu-latest
         steps:
           - run: echo "I'm testing GitHub Actions"
