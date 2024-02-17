@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
+from .models import Resume
+
+
+class ResumeList(generic.ListView):
+    model = Resume
+    context_object_name = "resume_list"
