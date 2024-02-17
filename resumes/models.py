@@ -1,6 +1,6 @@
 from django.db import models
 
-from root.models import Entity, Skill
+from shared.models import Entity, Skill
 
 
 class Resume(Entity):
