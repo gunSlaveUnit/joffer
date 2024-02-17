@@ -7,6 +7,9 @@ class Resume(Entity):
     position = models.CharField(max_length=100)
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.position
+
 
 class SkillLevel(Entity):
     LEVELS = (
