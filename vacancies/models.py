@@ -1,19 +1,6 @@
 from django.db import models
 
-from root.models import Entity
-
-
-class Skill(Entity):
-    """
-    Represents an ability or expertise
-    that a candidate should have or be able
-    to work with or have in their personality trait.
-    """
-
-    title = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.title
+from shared.models import Entity, Skill
 
 
 class Vacancy(Entity):
