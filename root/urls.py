@@ -9,5 +9,5 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('resumes/', include('resumes.urls')),
     path('vacancies/', include('vacancies.urls')),
-    path('', TemplateView.as_view(template_name='root/index.html')),
+    path('', TemplateView.as_view(template_name='root/index.html'), name='index'),
 ]
