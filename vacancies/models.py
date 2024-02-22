@@ -24,7 +24,7 @@ class Vacancy(Entity):
     experience_to = models.IntegerField(null=True, blank=True)
     experience_from = models.IntegerField(null=True, blank=True)
 
-    work_format = models.ForeignKey(WorkFormat, on_delete=models.CASCADE, null=True)
+    work_format = models.ForeignKey(WorkFormat, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'vacancies'
