@@ -3,6 +3,18 @@ from django.db import models
 from shared.models import Entity, Skill
 
 
+class EmploymentType(Entity):
+    """Determines the employee’s
+    involvement in the work process
+    and its duration.
+    """
+
+    title = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+
+
 class WorkFormat(Entity):
     """Place where the employee carries out activities."""
 
@@ -25,6 +37,7 @@ class Vacancy(Entity):
     experience_from = models.IntegerField(null=True, blank=True)
 
     work_format = models.ForeignKey(WorkFormat, on_delete=models.CASCADE)
+    employment_type = models.ForeignKey(EmploymentType, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'vacancies'
