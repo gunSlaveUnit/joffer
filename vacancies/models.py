@@ -8,6 +8,9 @@ class WorkFormat(Entity):
 
     title = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.title
+
 
 class Vacancy(Entity):
     title = models.CharField(max_length=100)
