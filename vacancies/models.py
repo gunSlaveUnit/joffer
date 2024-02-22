@@ -3,6 +3,12 @@ from django.db import models
 from shared.models import Entity, Skill
 
 
+class WorkFormat(Entity):
+    """Place where the employee carries out activities."""
+
+    title = models.CharField(max_length=100)
+
+
 class Vacancy(Entity):
     title = models.CharField(max_length=100)
 
@@ -14,6 +20,8 @@ class Vacancy(Entity):
     experience_matter = models.BooleanField(default=False)
     experience_to = models.IntegerField(null=True, blank=True)
     experience_from = models.IntegerField(null=True, blank=True)
+
+    work_format = models.ForeignKey(WorkFormat, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name_plural = 'vacancies'
