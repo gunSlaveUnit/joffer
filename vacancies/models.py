@@ -1,5 +1,6 @@
 from django.db import models
 
+from resumes.models import Resume
 from shared.models import Entity, Skill
 
 
@@ -44,6 +45,13 @@ class Vacancy(Entity):
 
     def __str__(self):
         return self.title
+
+
+class Respond(Entity):
+    """The user can respond to the vacancy with a resume."""
+
+    resume = models.ForeignKey(Resume, on_delete=models.CASCADE)
+    vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
 
 
 class Favorite(Entity):
