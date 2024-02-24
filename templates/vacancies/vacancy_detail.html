@@ -5,5 +5,7 @@
 
     {% if user.is_authenticated %}
         <button>Respond</button>
+    {% else %}
+        Only registered users can respond
     {% endif %}
 {% endblock %}
